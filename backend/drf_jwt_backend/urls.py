@@ -19,5 +19,11 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/auth/', include('authentication.urls')),
+    path('api/inventory/', include('inventory.urls')),
+    # path('api/users/', include('product.urls')),
     path('api/cars/', include('cars.urls')),
+    
 ]
+
+# urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+# urlpatterns += static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)

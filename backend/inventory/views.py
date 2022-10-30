@@ -9,7 +9,7 @@ from rest_framework.decorators import api_view, permission_classes;
 from rest_framework.permissions import IsAdminUser;
 from .models import Product;
 from .serializers import ProductSerializer;
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger;
+# from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger;
 
 
 
@@ -39,13 +39,13 @@ def createProduct(request):
 
     user = request.user
     product = Product.objects.create(
-        user=user,
-        name=" Product Name ",
-        price=0,
-        brand="Sample brand ",
-        countInStock=0,
-        category="Sample category",
-        description=" "
+        user = user,
+        name = " Product Name ",
+        price = 0,
+        brand = "Sample brand ",
+        # countInStock = 0,
+        # category="Sample category",
+        description = " "
     )
 
     serializer = ProductSerializer(product, many=False)
@@ -63,8 +63,8 @@ def updateProduct(request, pk):
     product.name = data["name"]
     product.price = data["price"]
     product.brand = data["brand"]
-    product.countInStock = data["countInStock"]
-    product.category = data["category"]
+    # product.countInStock = data["countInStock"]
+    # product.category = data["category"]
     product.description = data["description"]
 
     product.save()
