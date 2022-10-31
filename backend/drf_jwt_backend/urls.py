@@ -21,7 +21,7 @@ urlpatterns = [
     path('api/auth/', include('authentication.urls')),
     path('api/inventory/', include('inventory.urls')),
     # path('api/users/', include('product.urls')),
-    path('api/cars/', include('cars.urls')),
+    # path('api/cars/', include('cars.urls')),
     
 ]
 

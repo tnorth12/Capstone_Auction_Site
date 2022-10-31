@@ -91,3 +91,10 @@ def uploadImage(request):
     product.image = request.FILES.get('image')
     product.save()
     return Response("Image was uploaded")
+
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def get_product_by_id(request,productID):    
+    product = Product.objects.filter(_id=productID)
+    serializer = ProductSerializer(product,many=True)
+    return Response(serializer.data, status=status.HTTP_200_OK)
